@@ -1,8 +1,20 @@
-# React + Vite
+# HOTSTAR CLONE
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React based hotstar clone app. In this app we're following the similar UI patterns of the hotstar app like lazy loading components their navbar.
 
-Currently, two official plugins are available:
+## Pages
+- Home Page loaded with 5 different categories with lazy load to optimize the initial page load.
+- Categories detailed page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Please note this app is I've used for improving my React skills. I'm open for feedback.
+
+## Prequestie
+- NodeJS
+- npm
+- Vite
+- VSCode or any modern editor
+
+## Setup & Installation
+`npm install` - Clone the repo and run the command in the project root folder
+`npm run dev` - Run the command in the root to generate the project build.
+

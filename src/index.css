@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:wght@200;400;500;600;700&display=swap');
+/* reset css */
+/* 1. Use a more-intuitive box-sizing model */
+
+:root {
+    --bgColor: #0f1014;
+    --bgColorCritical: #FF0000;
+    --bgColorSuccess: #00FF00;
+    --blueColor: #63B0CD;
+    --mintGreen: #DCFFFD;
+    --warningColor: #FF9F1C;
+    --whiteColor: #f9f9f9;
+    --darkBlue: #142938;
+    --tertiary-color: #273142;
+    --quarterary-color: #313D4F;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--bgColor);
+    color: var(--whiteColor);
+    font-size: 1.6rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+}
+
+a {
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+
+
+/* global rules */
+.wrapper {
+  margin-left: 96px;
+  padding-left: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 1rem;
+  font-size: 14px;
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: var(--tertiary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--whiteColor);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--quarterary-color);
+    }
+
+    &:active:not(:disabled) {
+      background-color: var(--quarterary-color);
+      transform: scale(0.98);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+}

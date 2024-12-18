@@ -1,0 +1,11 @@
+.tray-container {
+
+    margin-bottom: 32px;
+
+    .title a {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+    }
+
+}

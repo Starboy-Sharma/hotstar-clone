@@ -3,74 +3,96 @@
 /* 1. Use a more-intuitive box-sizing model */
 
 :root {
-    --bgColor: #0f1014;
-    --bgColorCritical: #FF0000;
-    --bgColorSuccess: #00FF00;
-    --blueColor: #63B0CD;
-    --mintGreen: #DCFFFD;
-    --warningColor: #FF9F1C;
-    --whiteColor: #f9f9f9;
-    --darkBlue: #142938;
-    --tertiary-color: #273142;
-    --quarterary-color: #313D4F;
+  --bgColor: #0f1014;
+  --bgColorCritical: #FF0000;
+  --bgColorSuccess: #00FF00;
+  --blueColor: #63B0CD;
+  --mintGreen: #DCFFFD;
+  --warningColor: #FF9F1C;
+  --whiteColor: #f9f9f9;
+  --darkBlue: #142938;
+  --tertiary-color: #273142;
+  --quarterary-color: #313D4F;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  /* 2. Remove default margin */
-  * {
-    margin: 0;
-  }
-  
-  body {
-    /* 3. Add accessible line-height */
-    line-height: 1.5;
-    /* 4. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-    background-color: var(--bgColor);
-    color: var(--whiteColor);
-    font-size: 1.6rem;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
-  
-  /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  /* 6. Inherit fonts for form controls */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
-  /* 7. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  
-  /* 8. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--bgColor);
+  color: var(--whiteColor);
+  font-size: 1.6rem;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
     9. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
 }
 
 a {
-    text-decoration: none;
-    color: var(--whiteColor);
+  text-decoration: none;
+  color: var(--whiteColor);
 }
 
 
@@ -111,4 +133,105 @@ a {
     }
   }
 
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 400px;
+  min-height: 300px;
+  transform: translate(-50%, -50%);
+  background-color: var(--bgColor);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  border: 1px solid var(--tertiary-color);
+  
+}
+
+.modal-container .moda-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-container .modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--whiteColor);
+}
+
+.modal-container .modal-header button {
+  background: var(--warningColor);
+  cursor: pointer;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  color: var(--bgColor);
+  border-radius: 50%;
+  border: 1px solid var(--tertiary-color);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 100;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.modal-container .modal-content {
+  margin-bottom: 10px;
+  color: var(--whiteColor);
+  font-size: 14px;
+  min-height: 200px;
+}
+
+.modal-container .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-container .modal-footer button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--whiteColor);
+  background-color: var(--tertiary-color);
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.modal-container .modal-footer .confirm-button {
+  background-color: var(--whiteColor);
+  color: var(--bgColor)
 }
